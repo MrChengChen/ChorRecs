@@ -1,0 +1,45 @@
+
+<html>
+
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    
+        <title>Test-Auth</title>
+        <h1>AJAX Test</h1>
+        <h2>AJAX is here via the jQuery library.</h2>
+    	
+	    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+	   
+        <script type="text/javascript" charset="utf-8">
+		
+            $(document).ready(function(){
+                
+                $("#ID-TEST2").click(function(){
+                    
+                    alert("Test 2");
+                    
+                    $.getJSON("http://api.viddler.com/api/v2/viddler.users.auth.json",
+                    {
+                        api_key: "1sisupo1x9j0s1ju9eh3",
+                        user: "victors",
+                        password: "victors1"
+                    },
+                    function(json){
+                        alert("JSON Data: ");
+                    });
+                });
+                
+        	});
+        
+        </script>
+
+    </head>
+
+    <body>
+	    
+        <p>jQuery JSON-P interface usage</p>
+        <input type="button" id="ID-TEST2" name="NM-Test" value="getJSON Test">
+
+    </body>
+
+</html>
