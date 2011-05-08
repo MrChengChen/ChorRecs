@@ -1,0 +1,42 @@
+<html>
+
+    <head>
+    
+        <script type="text/javascript" src="easyXDM/easyXDM.js"></script>
+        
+        <script type="text/javascript">
+            
+            var XHR = new easyXDM.Rpc({
+                
+                remote: "http://api.viddler.com/cors/"
+            }, {
+                remote: {
+                    request: {} // request is exposed by /cors/
+                }
+            });
+            
+            
+            XHR.request({
+                url: "http://api.viddler.com/api/v2/viddler.users.auth.json",
+                method: "GET",
+                data:
+                {
+                    api_key: "1sisupo1x9j0s1ju9eh3",
+                    user: "victors",
+                    password: "victors1"
+                }
+            }, function(response) {
+                alert(response.status);
+                alert(response.data);
+            });
+            
+        </script>
+        
+    </head>
+    
+    <body>
+        
+    </body>
+    
+</html>
+
