@@ -43,14 +43,14 @@
                     
                     alert("Test 2");
                     
-                    $.getJSON("http://api.viddler.com/api/v2/viddler.users.auth.json?",
+                    $.getJSON("http://api.viddler.com/api/v2/viddler.users.auth.json",
                     {
                         api_key: "1sisupo1x9j0s1ju9eh3",
                         user: "victors",
                         password: "victors1"
                     },
-                    function(json){
-                        alert("JSON Data: ");
+                    function(data){
+                        alert("JSON Data: " + data.auth.sessionid);
                     });
                 });
                 
