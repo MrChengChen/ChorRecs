@@ -10,23 +10,50 @@
         
 	    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.js"></script>
 	   
+       
+        <script type="text/javascript">
+        // This is our function to be called with JSON data
+            /*
+            function call_back(data) {
+                alert("Symbol: " + data.symbol + ", Price: " + data.price);
+            }
+            
+            var url = "Insert.js"; // URL of the external script
+            // this shows dynamic script insertion
+            var script = document.createElement('script');
+            script.setAttribute('src', url);
+            
+            // load the script
+            document.getElementsByTagName('head')[0].appendChild(script);
+            */
+
+            
+        </script>
+       
+       
         <script type="text/javascript" charset="utf-8">
 		
             $(document).ready(function(){
                 
                 $("#ID-TEST2").click(function(){
                     
+                    var TheURL;
+                    
+                    alert("Test 1");
+                    TheURL = "http://services.digg.com/stories/top?appkey=http%3A%2F%2Fmashup.com&type=javascript"
+                    
+                    jQuery.getJSON(TheURL + "&callback=?", function(data) {
+                        alert("Success 1: " + data.count);
+                    });
+
                     alert("Test 2");
                     
-                    var TheURL = "http://api.viddler.com/api/v2/viddler.users.auth.json"
-                    TheURL += "?api_key=" + "1sisupo1x9j0s1ju9eh3";
-                    TheURL += "&user=" + "victors";
-                    TheURL += "&password=" + "victors1";
+                    TheURL = "http://api.viddler.com/api/v2/viddler.users.auth.json?api_key=1sisupo1x9j0s1ju9eh3&user=victors&password=victors1"
                     
-                    $.getJSON(TheURL + "?callback=?",
-                        function(data){
-                            alert("JSON Data: ");
+                    jQuery.getJSON(TheURL + "&callback=?", function(data) {
+                        alert("Success 1: ");
                     });
+                    
                 });
                 
         	});

@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.js"></script>
+    
+    <script type="text/javascript">
+        
+        var Request = new XMLHttpRequest();
+        Request.open("GET", "http://api.viddler.com/api/v2/viddler.users.auth.xml?key=01171d24e48b43444556524f45b3&user=victors&password=victors1", true);
+        Request.onreadystatechange = function(){
+            if ( Request.readyState == 4 ) {
+            if ( Request.status == 200 ) {
+                document.body.innerHTML = "My Name is: " + Request.responseText;
+            } else {
+                    document.body.innerHTML = "ERROR";
+                }
+            }
+        };
+
+        Request.send(null);        
+        
+    </script>
+    
+    
+</head>
+
+<body>
+</body>
+
+</html>
